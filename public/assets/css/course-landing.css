@@ -1,0 +1,278 @@
+/* ── COURSE LANDING PAGE STYLES ─────────────────────────────────────────── */
+/* course-landing.css - Separate stylesheet for course landing pages only */
+
+.course-landing-container {
+  animation: fadeInUp 0.6s ease-out;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.course-landing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--brand-lighter) 0%, var(--panel) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.course-landing-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(67, 97, 238, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.course-landing-title {
+  font-size: clamp(1.25rem, 2vw, 1.75rem); /* Changed from clamp(1.75rem, 3vw, 2.5rem) */
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+
+.course-landing-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.course-landing-section {
+  margin-bottom: 2.5rem;
+  background: var(--panel);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.course-landing-section:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand);
+}
+
+.course-landing-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.course-landing-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.course-landing-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.course-landing-list-item {
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  position: relative;
+  padding-left: 2.5rem;
+  transition: var(--transition);
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.course-landing-list-item:hover {
+  background: var(--brand-lighter);
+  border-color: var(--brand);
+  transform: translateX(2px);
+}
+
+.course-landing-list-item::before {
+  content: "✓";
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.875rem;
+  width: 16px;
+  height: 16px;
+  background: var(--brand-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.course-landing-description {
+  background: linear-gradient(135deg, var(--brand-lighter) 0%, var(--panel) 100%);
+  border-left: 4px solid var(--brand);
+}
+
+.course-landing-description p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.course-landing-description p:last-child {
+  margin-bottom: 0;
+}
+
+.course-landing-requirements .course-landing-list-item::before {
+  content: "•";
+  background: var(--gold-light);
+  color: var(--gold);
+}
+
+.course-landing-requirements .course-landing-list-item:hover {
+  background: var(--gold-light);
+  border-color: var(--gold);
+}
+
+.course-landing-audience .course-landing-list-item::before {
+  content: "👤";
+  background: var(--success-light);
+  color: var(--success);
+  font-size: 0.6rem;
+}
+
+.course-landing-audience .course-landing-list-item:hover {
+  background: var(--success-light);
+  border-color: var(--success);
+}
+
+.course-landing-actions {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--brand-lighter) 0%, var(--panel) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+}
+
+.course-landing-get-started-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── LESSON CONTENT STYLES ─────────────────────────────────────────── */
+/* Specific styles for individual lesson pages */
+
+.lesson-content h1 {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.lesson-content p {
+  margin-top: 2rem !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: var(--text-muted) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-landing-container {
+    margin: 0;
+  }
+  
+  .course-landing-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .course-landing-title {
+    font-size: 1.5rem; /* Changed from 1.75rem */
+  }
+  
+  .course-landing-subtitle {
+    font-size: 1rem;
+  }
+  
+  .course-landing-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .course-landing-section-title {
+    font-size: 1.125rem;
+  }
+  
+  .course-landing-list-item {
+    padding: 0.875rem 1rem 0.875rem 2.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .course-landing-actions {
+    padding: 1.5rem;
+  }
+  
+  .course-landing-get-started-text {
+    font-size: 1rem;
+  }
+  
+  .lesson-content h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-landing-title {
+    font-size: 1.25rem; /* Changed from 1.5rem */
+  }
+  
+  .course-landing-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .course-landing-section {
+    padding: 1rem;
+  }
+  
+  .course-landing-list-item {
+    padding: 0.75rem 0.875rem 0.75rem 2rem;
+    font-size: 0.875rem;
+  }
+  
+  .lesson-content h1 {
+    font-size: 1.25rem !important;
+  }
+}

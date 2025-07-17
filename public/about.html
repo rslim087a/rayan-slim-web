@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Rayan Slim – Cloud-Native Architect & DevOps Professional." />
+  <title>About – Rayan Slim</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/design-tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Rayan Slim</a>
+      
+      <div class="nav-and-profile">
+        <ul class="nav-links">
+          <li><a href="/">Courses</a></li>
+          <li><a href="/about" class="active">About</a></li>
+        </ul>
+        
+        <div id="user-profile" class="user-profile" style="display:none;">
+          <div class="profile-avatar" id="profile-avatar">
+            <!-- Letter will be inserted here -->
+          </div>
+          <div class="profile-dropdown" id="profile-dropdown" style="display:none;">
+            <div class="profile-email" id="profile-email"></div>
+            <button class="profile-logout" id="profile-logout">Sign Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">About Rayan Slim</h1>
+        <p class="hero-subtitle">Cloud-Native Architect & DevOps Professional</p>
+      </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="instructor-section">
+      <div class="instructor-content">
+        <!-- Updated to use local image file -->
+        <img src="instructor-img.jpg" alt="Rayan Slim portrait" class="instructor-img" />
+
+        <div class="instructor-info">
+          <h2 class="instructor-name">Rayan Slim</h2>
+          <span class="instructor-role">Cloud-Native Architect & DevOps Professional</span>
+          <p class="instructor-bio">
+            Senior DevOps Engineer with over a decade of software development experience, now leading high-impact
+            initiatives focused on cloud-native solutions. Passionate about guiding developers into cloud and DevOps
+            roles, with a proven record of mentoring <strong>250,000+</strong> students worldwide.
+          </p>
+
+          <div class="instructor-stats">
+            <div class="stat">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">250k+</div>
+              <div class="stat-label">Students</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4.8 / 5</div>
+              <div class="stat-label">Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="/assets/js/shared/user-profile.js"></script>
+</body>
+</html>

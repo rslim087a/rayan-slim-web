@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  devops-training:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb+srv://rslim087:29MAQC5o@cluster0.rhywdsy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    restart: unless-stopped

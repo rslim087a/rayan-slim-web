@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps Courses – Rayan Slim</title>
+  <meta name="description" content="DevOps Courses – Structured roadmap designed by Rayan Slim." />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/design-tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Rayan Slim</a>
+      
+      <div class="nav-and-profile">
+        <ul class="nav-links">
+          <li><a href="/" class="active">Courses</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        
+        <div id="user-profile" class="user-profile" style="display:none;">
+          <div class="profile-avatar" id="profile-avatar">
+            <!-- Letter will be inserted here -->
+          </div>
+          <div class="profile-dropdown" id="profile-dropdown" style="display:none;">
+            <div class="profile-email" id="profile-email"></div>
+            <button class="profile-logout" id="profile-logout">Sign Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Become a DevOps Engineer</h1>
+        <p class="hero-subtitle">Learn every tool that matters with hands-on courses.</p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <h2 class="filter-title">Browse by Category</h2>
+      <div class="filters" id="filters"></div>
+    </section>
+
+    <!-- Courses List -->
+    <section class="courses-grid" id="courses-grid">
+      <!--SSR_COURSES-->
+    </section>
+  </main>
+
+  <!-- Email Gate Overlay -->
+<!-- Email / OAuth Gate (OAuth-only) -->
+<div id="email-gate" class="email-gate" style="display:none">
+  <div class="email-gate-dialog">
+    <button class="email-gate-close" id="email-gate-close">&times;</button>
+    <h2 class="gate-title">Choose a sign-in method</h2>
+
+    <div class="oauth-buttons">
+      <button class="oauth-btn google" id="oauth-google">
+        <img src="/assets/icons/google.svg" alt="" />Continue with Google
+      </button>
+      <button class="oauth-btn github"  id="oauth-github">
+        <img src="/assets/icons/github.svg" alt="" />Continue with GitHub
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="/assets/js/shared/user-profile.js"></script>
+  <script type="module" src="/assets/js/shared/email-gate.js"></script>
+  <script type="module" src="/assets/js/index.js"></script>
+</body>
+</html>

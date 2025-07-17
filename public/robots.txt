@@ -1,0 +1,14 @@
+# ──────────────────────────────────────────────
+#   robots.txt – RayanSlim.com
+#   Last updated: 2025-06-12
+# ──────────────────────────────────────────────
+
+User-agent: *
+Allow: /
+
+# Block non-indexable endpoints (no ranking value)
+Disallow: /api/
+Disallow: /auth/
+
+# XML sitemap – lists every course & lesson URL
+Sitemap: https://rayanslim.com/sitemap.xml

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Curriculum</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/design-tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+  <link rel="stylesheet" href="/assets/css/course-landing.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Rayan Slim</a>
+      <div class="nav-and-profile">
+        <ul class="nav-links">
+          <li><a href="/" class="active">Courses</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <div id="user-profile" class="user-profile" style="display:none;">
+          <div class="profile-avatar" id="profile-avatar"></div>
+          <div class="profile-dropdown" id="profile-dropdown" style="display:none;">
+            <div class="profile-email" id="profile-email"></div>
+            <button class="profile-logout" id="profile-logout">Sign Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="course-container">
+    <!-- Curriculum Sidebar -->
+    <aside class="sidebar">
+      <!-- SSR will inject this -->
+      <div id="sidebar"></div>
+    </aside>
+
+    <!-- Content Area -->
+    <main class="content">
+      <div class="content-body">
+        <!-- For landing pages: -->
+        <!--SSR_COURSE_LANDING-->
+        <!-- For lessons: -->
+        <!--SSR_LESSON_BODY-->
+      </div>
+    </main>
+  </div>
+
+  <!-- Suggestion Modal -->
+  <div id="suggestion-modal" class="modal" style="display:none">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Make a Suggestion</h2>
+        <button id="suggestion-close" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="suggestion-form" class="suggestion-form">
+          <div class="form-group">
+            <label for="suggestion-name" class="form-label">Your Name</label>
+            <input type="text" id="suggestion-name" name="name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="suggestion-email" class="form-label">Your Email (for my response)</label>
+            <input type="email" id="suggestion-email" name="email" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="suggestion-message" class="form-label">
+              What's Missing From This Course?
+              <span id="char-count" style="color: var(--text-light); font-weight: 400;">(0/1000)</span>
+            </label>
+            <textarea
+              id="suggestion-message"
+              name="message"
+              class="form-textarea"
+              maxlength="1000"
+              placeholder="What topics, tools, or concepts should be added to this curriculum? Be specific - the more detail you provide, the more likely I am to implement it. I read every suggestion personally and will email you back with my decision."
+              required
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" id="suggestion-cancel" class="btn btn-secondary">Cancel</button>
+            <button type="submit" id="suggestion-submit" class="btn btn-primary">Send Suggestion</button>
+          </div>
+        </form>
+        <div id="suggestion-response" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email / OAuth Gate (OAuth-only) -->
+  <div id="email-gate" class="email-gate" style="display:none">
+    <div class="email-gate-dialog">
+      <button class="email-gate-close" id="email-gate-close">&times;</button>
+      <h2 class="gate-title">Choose a sign-in method</h2>
+      <div class="oauth-buttons">
+        <button class="oauth-btn google" id="oauth-google">
+          <img src="/assets/icons/google.svg" alt="" />Continue with Google
+        </button>
+        <button class="oauth-btn github" id="oauth-github">
+          <img src="/assets/icons/github.svg" alt="" />Continue with GitHub
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="/assets/js/shared/user-profile.js"></script>
+  <script type="module" src="/assets/js/shared/email-gate.js"></script>
+  <script type="module" src="/assets/js/course.js"></script>
+
+  <!-- Suggestion message styles -->
+  <style>
+    .suggestion-message {
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    .suggestion-message.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .suggestion-message.error {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+    .suggestion-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  </style>
+</body>
+</html>
